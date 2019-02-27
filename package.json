@@ -4,6 +4,7 @@
   "description": "Testing Webpack and Parcel",
   "main": "index.js",
   "scripts": {
+    "prepare:es5": "babel node_modules/@vaadin node_modules/@polymer node_modules/react-vaadin-components node_modules/@webcomponents/shadycss -x '.js' --out-dir ./ --relative --presets @babel/env,@babel/preset-react",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -20,9 +21,10 @@
     "react-vaadin-components": "^0.8.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "parcel-bundler": "^1.11.0",
     "react-scripts": "^2.1.5"
   },
@@ -30,7 +32,8 @@
     "development": [
       "last 2 chrome versions",
       "last 2 firefox versions",
-      "last 2 edge versions"
+      "last 2 edge versions",
+      "ie 11"
     ],
     "production": [
       ">0.25%",
